@@ -1,0 +1,34 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<h2>Planšetiniai kompiuteriai</h2>
+<hr>
+<br>
+<br>
+<div class="row">
+    {% for tablet in tablets %}
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{{tablet.imageURL}}">
+        <div class="box-element tablet">
+            <h6><strong>{{tablet.name}}</strong></h6>
+            <hr>
+            <button data-tablet="{{tablet.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">
+                Į krepšelį
+            </button>
+            <!--                <a class="btn btn-outline-success" href="{{ tablet.id }}">View</a>-->
+            <h4 style="display: inline-block;float: right"><strong>{{tablet.price|floatformat:2}} €</strong></h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+<div class="d-flex justify-content-center">
+  <div class="spinner-border text-success" role="status">
+    <span class="visually-hidden"></span>
+  </div>
+</div>
+<h5 class="d-flex justify-content-center">Loading...</h5>
+<br>
+{% endblock content %}

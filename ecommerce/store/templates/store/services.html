@@ -1,0 +1,25 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<h2>Pokalbių planai</h2>
+<hr>
+<div class="row">
+    {% for service in services %}
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{{service.imageURL}}" width="100">
+        <div class="box-element service" width="100">
+            <h6><strong>{{service.name}}</strong></h6>
+            <hr>
+            <button data-servics="{{service.id}}" data-action="add"
+                    class="btn btn-outline-secondary add-btn update-cart">Į krepšelį
+            </button>
+            <h4 class="text-danger" style="display: inline-block;float: right"><strong>{{service.price|floatformat:2}}
+                €/mėn.</strong></h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+{% endblock content %}

@@ -1,0 +1,248 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/nuolaida1.png' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/nuolaida2.png' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/nuolaida3.png' %}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+</div>
+
+<!--<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">-->
+<!--  <div class="carousel-indicators">-->
+<!--    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
+<!--    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
+<!--    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+<!--  </div>-->
+<!--  <div class="carousel-inner">-->
+<!--    <div class="carousel-item active">-->
+<!--      <img src="{% static 'images/nuolaida1.png' %}" class="d-block w-100" alt="...">-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="{% static 'images/nuolaida2.png' %}" class="d-block w-100" alt="...">-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="{% static 'images/nuolaida3.png' %}" class="d-block w-100" alt="...">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <button  class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">-->
+<!--    <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--    <span class="visually-hidden">Previous</span>-->
+<!--  </button>-->
+<!--  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">-->
+<!--    <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--    <span class="visually-hidden">Next</span>-->
+<!--  </button>-->
+<!--</div>-->
+
+<br>
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <a href="{% url 'news' %}"><img src="https://www.bite.lt/sites/default/files/2022-11/top-top-dovanos-500-hub_0.jpg"
+                                           class="card-img-top" alt="..."></a>
+                <div class="card-body">
+                    <h5 class="card-title">„Bitutės Profai“ rekomenduoja: TOP 5 geriausios dovanos iki 500 eurų</h5>
+                    <a href="{% url 'news' %}" class="btn btn-success">Skaityti toliau</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <a href="{% url 'watches' %}"><img src="https://s.yimg.com/os/creatr-uploaded-images/2022-09/ebb8c420-2ee0-11ed-be71-1e34932b5a55"
+                                           class="card-img-top" alt="..."></a>
+                <div class="card-body">
+                    <h5 class="card-title">Apple Watch jau BITUTĖJE!</h5>
+                    <a href="{% url 'watches' %}" class="btn btn-success">Įsigykite!</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <a href="https://youtu.be/Omxi94dorMQ"><img src="https://i.ytimg.com/vi/Omxi94dorMQ/maxresdefault.jpg" class="card-img-top" alt="..."></a>
+                <div class="card-body">
+                    <h5 class="card-title">„Apple iPhone 14 | 14 Pro | 14 Pro Max“ apžvalga</h5>
+                    <a href="https://youtu.be/Omxi94dorMQ" class="btn btn-success">Žiūrėti</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-body">
+        <h4>Mobilieji, išmanieji telefonai</h4>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-4">
+        <a href="https://www.bite.lt/telefonai/samsung-galaxy-fold4-5g?v=20275"><img class="thumbnail"
+                                                                                     src="{% static 'images/samsung_galaxy_fold4-beige-10.png' %}"></a>
+        <div class="box-element product">
+            <h6><strong>Samsung Galaxy Fold4 5G</strong></h6>
+            <hr>
+            <button data-product="{{product.id}}" data-action="add"
+                    class="btn btn-outline-secondary add-btn update-cart">Į krepšelį
+            </button>
+            <h4 style="display: inline-block;float: right"><strong>1819.00 €</strong></h4>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <a href="https://www.bite.lt/telefonai/apple-iphone-14-pro-max?v=20965"><img class="thumbnail"
+                                                                                     src="{% static 'images/iphone_14_pro_max-deep_purple-2.png' %}"></a>
+        <div class="box-element product">
+            <h6><strong>Apple iPhone 14 Pro Max</strong></h6>
+            <hr>
+            <button data-product="{{product.id}}" data-action="add"
+                    class="btn btn-outline-secondary add-btn update-cart">Į krepšelį
+            </button>
+            <h4 style="display: inline-block;float: right"><strong>1499.00 €</strong></h4>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <a href="https://www.bite.lt/telefonai/huawei-mate-50-pro"><img class="thumbnail"
+                                                                        src="{% static 'images/huawei_mate_50_pro-black-9_1.png' %}"></a>
+        <div class="box-element product">
+            <h6><strong>Huawei Mate 50 Pro</strong></h6>
+            <hr>
+            <button data-product="{{product.id}}" data-action="add"
+                    class="btn btn-outline-secondary add-btn update-cart">Į krepšelį
+            </button>
+            <h4 style="display: inline-block;float: right"><strong>1299.00 €</strong></h4>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btn btn-success" href="{% url 'phones' %}" role="button">Daugiau</a>
+</div>
+<br>
+<br>
+<br>
+<div class="card">
+    <div class="card-body">
+        <h4>Planšetiniai kompiuteriai</h4>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-4">
+        <a href="https://www.bite.lt/plansetes/apple-ipad-pro-129-2022-wi-fi-cellular"><img class="thumbnail"
+                                                                                            src="{% static 'images/apple_ipad_pro_12.9_6th_gen-space_gray.png' %}"></a>
+        <div class="box-element tablet">
+            <h6><strong>Apple iPad Pro 12.9" (2022)</strong></h6>
+            <hr>
+            <button data-tablet="{{tablet.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">
+                Į krepšelį
+            </button>
+            <!--                <a class="btn btn-outline-success" href="{{ tablet.id }}">View</a>-->
+            <h4 style="display: inline-block;float: right"><strong>1669.00 €</strong></h4>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <a href="https://www.bite.lt/verslui/plansetes/lenovo-tab-p11-pro-lte-j706l-za7d0069nl"><img class="thumbnail"
+                                                                                                     src="{% static 'images/lenovo_ideatab_p11_pro_lte_11-5_6-128gb_slate-grey-2_0.png' %}"></a>
+        <div class="box-element tablet">
+            <h6><strong>Lenovo Tab P11 Pro LTE</strong></h6>
+            <hr>
+            <button data-tablet="{{tablet.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">
+                Į krepšelį
+            </button>
+            <!--                <a class="btn btn-outline-success" href="{{ tablet.id }}">View</a>-->
+            <h4 style="display: inline-block;float: right"><strong>739.00 €</strong></h4>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <a href="https://www.bite.lt/verslui/plansetes/samsung-galaxy-tab-s8-5g"><img class="thumbnail"
+                                                                                      src="{% static 'images/samsung_galaxy_tab_s8-graphite-9_0.png' %}"></a>
+        <div class="box-element tablet">
+            <h6><strong>Samsung Galaxy Tab S8 5G</strong></h6>
+            <hr>
+            <button data-tablet="{{tablet.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">
+                Į krepšelį
+            </button>
+            <!--                <a class="btn btn-outline-success" href="{{ tablet.id }}">View</a>-->
+            <h4 style="display: inline-block;float: right"><strong>919.00 €</strong></h4>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btn btn-success" href="{% url 'tablets' %}" role="button">Daugiau</a>
+</div>
+<br>
+<br>
+<br>
+<div class="card">
+    <div class="card-body">
+        <h4>Išmanieji laikrodžiai</h4>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-4">
+        <a href="https://www.bite.lt/ismanus-laikrodziai/apple-watch-se-2022-gps-cellular-40mm"><img class="thumbnail"
+                                                                                                     src="{% static 'images/apple_watch_se_gps_cellular_44mm_midnight_aluminium_case_with_midnight_sport_band.png' %}"></a>
+        <div class="box-element tablet">
+            <h6><strong>Apple Watch SE (2022) GPS</strong></h6>
+            <hr>
+            <button data-tablet="{{tablet.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">
+                Į krepšelį
+            </button>
+            <!--                <a class="btn btn-outline-success" href="{{ tablet.id }}">View</a>-->
+            <h4 style="display: inline-block;float: right"><strong>419.00 €</strong></h4>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <a href="https://www.bite.lt/verslui/ismanus-laikrodziai/apple-watch-series-8-gps-cellular-41mm-silver-stainless"><img
+                class="thumbnail"
+                src="{% static 'images/apple_watch_series_8_gps_cellular_41mm_gold_stainless_steel_case_with_starlight_sport_band.png' %}"></a>
+        <div class="box-element tablet">
+            <h6><strong>Apple Watch Series 8 GPS + Cellular 41mm</strong></h6>
+            <hr>
+            <button data-tablet="{{tablet.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">
+                Į krepšelį
+            </button>
+            <!--                <a class="btn btn-outline-success" href="{{ tablet.id }}">View</a>-->
+            <h4 style="display: inline-block;float: right"><strong>899.00 €</strong></h4>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <a href="https://www.bite.lt/ismanus-laikrodziai/apple-watch-ultra-gps-cellular-49mm-titanium-case-large"><img
+                class="thumbnail"
+                src="{% static 'images/apple_watch_ultra_gps_cellular_49mm_titanium_case_with_orange_alpine_loop.png' %}"></a>
+        <div class="box-element tablet">
+            <h6><strong>Apple Watch Ultra GPS + Cellular 49mm</strong></h6>
+            <hr>
+            <button data-tablet="{{tablet.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">
+                Į krepšelį
+            </button>
+            <!--                <a class="btn btn-outline-success" href="{{ tablet.id }}">View</a>-->
+            <h4 style="display: inline-block;float: right"><strong>1069.00 €</strong></h4>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btn btn-success" href="{% url 'watches' %}" role="button">Daugiau</a>
+</div>
+<br>
+<br>
+<br>
+<div class="d-flex justify-content-center">
+    <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden"></span>
+    </div>
+</div>
+<h5 class="d-flex justify-content-center">Loading...</h5>
+<br>
+{% endblock content %}

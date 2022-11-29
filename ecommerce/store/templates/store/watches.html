@@ -1,0 +1,41 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/watches.png' %}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+</div>
+<br>
+<h2>Išmanieji laikrodžiai</h2>
+<hr>
+<br>
+<br>
+<div class="row">
+    {% for watch in watches %}
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{{watch.imageURL}}">
+        <div class="box-element watch">
+            <h6><strong>{{watch.name}}</strong></h6>
+            <hr>
+            <button data-watch="{{watch.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Į
+                krepšelį
+            </button>
+            <!--                <a class="btn btn-outline-success" href="{{ watch.id }}">View</a>-->
+            <h4 style="display: inline-block;float: right"><strong>{{watch.price|floatformat:2}} €</strong></h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+<div class="d-flex justify-content-center">
+    <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden"></span>
+    </div>
+</div>
+<h5 class="d-flex justify-content-center">Loading...</h5>
+<br>
+{% endblock content %}

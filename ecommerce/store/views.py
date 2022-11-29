@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
-from django.contrib.auth.forms import UserCreationForm, User
-from django.contrib.auth.models import Group
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.http import JsonResponse
@@ -19,7 +18,6 @@ def phones(request):
     data = cartData(request)
 
     cartItems = data['cartItems']
-
 
     products = Product.objects.all()
     context = {'products': products, 'cartItems': cartItems}
@@ -147,19 +145,19 @@ def processOrder(request):
     return JsonResponse('Payment complete!', safe=False)
 
 
-@csrf_protect
 def registerPage(request):
     form = CreateUserForm()
-    if request.method == "POST":
+
+    if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+
             return redirect('login')
     context = {'form': form}
     return render(request, 'registration/register.html', context)
 
 
-@csrf_protect
 def loginPage(request):
     if request.method == 'POST':
         username = request.POST.get('username')

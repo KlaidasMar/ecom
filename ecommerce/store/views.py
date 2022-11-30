@@ -1,15 +1,13 @@
 from django.shortcuts import render, redirect
-from django.views.decorators.csrf import csrf_exempt, csrf_protect
-from django.contrib.auth.forms import UserCreationForm
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate, login, logout
-from django.contrib import messages
 from django.http import JsonResponse
 import datetime
 import json
 
 from django.views import generic
 from .models import *
-from .utils import cookieCart, cartData, guestOrder
+from .utils import cartData, guestOrder
 from .forms import CreateUserForm
 
 
@@ -152,7 +150,7 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-
+            user = form.cleaned_data.get('username')
             return redirect('login')
     context = {'form': form}
     return render(request, 'registration/register.html', context)
